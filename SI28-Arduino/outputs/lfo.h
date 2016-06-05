@@ -3,7 +3,7 @@
 
 #define MATH_PI 3.14159F
 
-#define LFO_MIN  .10F //Hz
+#define LFO_MIN  .08F //Hz
 #define LFO_MAX 5.00F //Hz
 
 #define LFO_DEBUG 0

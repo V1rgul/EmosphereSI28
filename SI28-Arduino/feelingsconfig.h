@@ -9,6 +9,7 @@ void configFeelings(FeelingsManager &m){
 	m.setFeelingsGamma(3);
 
 	m.setSpecificGamma(FeelingsManager::Outputs::LightHue, 10);
+	m.setSpecificGamma(FeelingsManager::Outputs::SoundVNR, 5);
 
 	///// RAGE /////////////////////////////////////////////////////////////////////////////////
 	m.setI(FeelingsManager::Feelings::Rage, FeelingsManager::Inputs::Fsr,	1.0, 1.0);
@@ -22,19 +23,23 @@ void configFeelings(FeelingsManager &m){
 	m.setO(FeelingsManager::Feelings::Rage,	FeelingsManager::Outputs::VibrateStrengh,		1.0, 1.0);
 	m.setO(FeelingsManager::Feelings::Rage,	FeelingsManager::Outputs::VibrateLFOGain,		1.0, 1.0);
 	m.setO(FeelingsManager::Feelings::Rage,	FeelingsManager::Outputs::VibrateLFOWaveform,	  0, 1.0);
+	m.setO(FeelingsManager::Feelings::Rage,	FeelingsManager::Outputs::SoundResp,	   .0, 1.0);
+	m.setO(FeelingsManager::Feelings::Rage,	FeelingsManager::Outputs::SoundVNR,		  1.0, 1.0);
 
 	///// FEAR /////////////////////////////////////////////////////////////////////////////////
 	m.setI(FeelingsManager::Feelings::Fear, FeelingsManager::Inputs::Fsr,	1.0, 1.0);
 	m.setI(FeelingsManager::Feelings::Fear, FeelingsManager::Inputs::Accel,	  0, 1.0);
 	//m.setInputTarget(FeelingsManager::Inputs::Mic,	FeelingsManager::Feelings::Rage,	1, 1);
-	m.setO(FeelingsManager::Feelings::Fear,	FeelingsManager::Outputs::Freq,	1.0, 1.0);
-	m.setO(FeelingsManager::Feelings::Fear,	FeelingsManager::Outputs::LightHue,			 .7, 1.0);
-	m.setO(FeelingsManager::Feelings::Fear,	FeelingsManager::Outputs::LightSat,			1.0, 1.0);
-	m.setO(FeelingsManager::Feelings::Fear,	FeelingsManager::Outputs::LightLFOGain,		 .5, 1.0);
-	m.setO(FeelingsManager::Feelings::Fear,	FeelingsManager::Outputs::LightLFOWaveform,	1.0, 1.0);
-	m.setO(FeelingsManager::Feelings::Fear,	FeelingsManager::Outputs::VibrateStrengh,		 .4, 1.0);
-	m.setO(FeelingsManager::Feelings::Fear,	FeelingsManager::Outputs::VibrateLFOGain,		 .5, 1.0);
-	m.setO(FeelingsManager::Feelings::Fear,	FeelingsManager::Outputs::VibrateLFOWaveform,	1.0, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::Freq,	1.0, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::LightHue,			 .7, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::LightSat,			1.0, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::LightLFOGain,		 .5, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::LightLFOWaveform,	1.0, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::VibrateStrengh,		 .4, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::VibrateLFOGain,		 .5, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::VibrateLFOWaveform,	1.0, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::SoundResp,	   .0, 1.0);
+	m.setO(FeelingsManager::Feelings::Fear, FeelingsManager::Outputs::SoundVNR,		   .0, 1.0);
 
 	///// JOY /////////////////////////////////////////////////////////////////////////////////
 	m.setI(FeelingsManager::Feelings::Joy, FeelingsManager::Inputs::Fsr,	 .3, 1.0);
@@ -48,6 +53,8 @@ void configFeelings(FeelingsManager &m){
 	m.setO(FeelingsManager::Feelings::Joy, FeelingsManager::Outputs::VibrateStrengh,		 .5, 1.0);
 	m.setO(FeelingsManager::Feelings::Joy, FeelingsManager::Outputs::VibrateLFOGain,		 .5, 1.0);
 	m.setO(FeelingsManager::Feelings::Joy, FeelingsManager::Outputs::VibrateLFOWaveform,	  0, 1.0);
+	m.setO(FeelingsManager::Feelings::Joy, FeelingsManager::Outputs::SoundResp,	   .0, 1.0);
+	m.setO(FeelingsManager::Feelings::Joy, FeelingsManager::Outputs::SoundVNR,		   .0, 1.0);
 
 	///// LOVE /////////////////////////////////////////////////////////////////////////////////
 	m.setI(FeelingsManager::Feelings::Love, FeelingsManager::Inputs::Fsr,	  0, 1.0);
@@ -61,6 +68,8 @@ void configFeelings(FeelingsManager &m){
 	m.setO(FeelingsManager::Feelings::Love, FeelingsManager::Outputs::VibrateStrengh,		 .2, 1.0);
 	m.setO(FeelingsManager::Feelings::Love, FeelingsManager::Outputs::VibrateLFOGain,		 .5, 1.0);
 	m.setO(FeelingsManager::Feelings::Love, FeelingsManager::Outputs::VibrateLFOWaveform,	  0, 1.0);
+	m.setO(FeelingsManager::Feelings::Love, FeelingsManager::Outputs::SoundResp,	   .3, 1.0);
+	m.setO(FeelingsManager::Feelings::Love, FeelingsManager::Outputs::SoundVNR,		   .0, 1.0);
 
 	// ///// SAD  /////////////////////////////////////////////////////////////////////////////////
 	// m.setI(FeelingsManager::Feelings::Sad, FeelingsManager::Inputs::Fsr,	  0, 1.0);
@@ -87,6 +96,8 @@ void configFeelings(FeelingsManager &m){
 	m.setO(FeelingsManager::Feelings::Sleep, FeelingsManager::Outputs::VibrateStrengh,		  0, 2.0);
 	m.setO(FeelingsManager::Feelings::Sleep, FeelingsManager::Outputs::VibrateLFOGain,		  0,   0);
 	m.setO(FeelingsManager::Feelings::Sleep, FeelingsManager::Outputs::VibrateLFOWaveform,	1.0,   0);
+	m.setO(FeelingsManager::Feelings::Sleep, FeelingsManager::Outputs::SoundResp,	  1.0, 1.0);
+	m.setO(FeelingsManager::Feelings::Sleep, FeelingsManager::Outputs::SoundVNR,	   .0, 1.0);
 }
 
 #endif

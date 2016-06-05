@@ -3,8 +3,8 @@
 
 #include <Arduino.h>
 
-#include "i2cdevlib/I2Cdev/I2Cdev.h"
-#include "i2cdevlib/MPU6050/MPU6050.h"
+#include "i2cdevlib_teensy/Arduino/I2Cdev/I2Cdev.h"
+#include "i2cdevlib_teensy/Arduino/MPU6050/MPU6050.h"
 //#include "helper_3dmath.h"
 
 #include "../com.h"
@@ -44,9 +44,10 @@ public:
 
 	void init(){
 		Wire.begin();
-		ComDebug("Initializing IMU");
+		ComDebugF("Initializing IMU... ");
 		mpu.initialize();
-		ComDebug( mpu.testConnection() ? "IMU OK" : "IMU ERROR /!\\");
+		ComDebugF( mpu.testConnection() ? "IMU OK !" : "IMU ERROR /!\\");
+		ComDebugF('\n');
 		mpu.setFullScaleAccelRange(IMU_RANGE_CONFIG);
 		mpu.setDLPFMode( MPU6050_DLPF_BW_5 ); //Digital LowPass Filter at 5Hz
 	}

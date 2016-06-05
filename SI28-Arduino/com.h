@@ -30,5 +30,8 @@ uint64_t Com::interval = 1000; //ms
 #define ComDebug(...) \
 	{if(Com::on){ Serial.print(__VA_ARGS__); } }
 
+#define ComDebugF(...) \
+	{ Serial.print(__VA_ARGS__); }
+
 
 #endif

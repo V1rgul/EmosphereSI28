@@ -1,6 +1,6 @@
 
-#include "Arduino.h"
-//#include "Wire.h"
+#include <Arduino.h>
+// #include <Wire.h>
 
 #include "com.h"
 #include "inputs/imu.h"
@@ -9,6 +9,7 @@
 #include "outputs/lfo.h"
 #include "outputs/leds.h"
 #include "outputs/vibration.h"
+#include "outputs/speaker.h"
 
 #include "feelings.h"
 #include "feelingsconfig.h"
@@ -23,6 +24,7 @@ FeelingsManager feelingsManager;
 LFO lfo;
 Leds leds(lfo);
 VibrationSoftPWM vibration(lfo);
+Speaker speaker(lfo);
 
 
 typedef uint64_t time64_t;
@@ -33,8 +35,10 @@ time64_t timeNow(){
 
 void setup() {
 	delay(100);
-	
 	com.init();
+	delay(500);
+	ComDebugF("Init...\n");
+
 
 	//init Leds first
 	leds.init();
@@ -46,12 +50,15 @@ void setup() {
 	fsr.init();
 
 	vibration.init();
+	speaker.init();
 
 	configFeelings(feelingsManager);
 
 
 	delay(200);
 	time = timeNow();
+
+	ComDebugF("Done!\n");
 }
 
 time64_t debugF = 3e6, debugFLast = 0;
@@ -90,6 +97,10 @@ void loop() {
 		feelingsManager.getOutput(FeelingsManager::Outputs::VibrateStrengh),
 		feelingsManager.getOutput(FeelingsManager::Outputs::VibrateLFOGain),
 		feelingsManager.getOutput(FeelingsManager::Outputs::VibrateLFOWaveform)
+	);
+	speaker.setValue(
+		feelingsManager.getOutput(FeelingsManager::Outputs::SoundResp),
+		feelingsManager.getOutput(FeelingsManager::Outputs::SoundVNR)
 	);
 
 	feelingsManager.debug();

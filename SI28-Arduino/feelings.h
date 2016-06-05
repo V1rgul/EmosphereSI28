@@ -20,6 +20,7 @@ public:
 		Freq,
 		LightHue, LightSat, LightLFOGain, LightLFOWaveform,
 		VibrateStrengh, VibrateLFOGain, VibrateLFOWaveform,
+		SoundResp, SoundVNR,
 		SIZE
 	};
 
