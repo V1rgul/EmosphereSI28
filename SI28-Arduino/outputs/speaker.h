@@ -1,7 +1,7 @@
 #ifndef SPEAKER_H
 #define SPEAKER_H
 
-#define SPEAKER_VOL_MAX .05F
+#define SPEAKER_VOL_MAX .5F
 
 // #define SPEAKER_S1_FREQ_MIN 300.0F
 // #define SPEAKER_S1_FREQ_MAX 1000.0F
@@ -9,7 +9,7 @@
 // #define SPEAKER_S2_FREQ_MAX 8000.0F
 #define SPEAKER_NL_FREQ_MIN 600.0F
 #define SPEAKER_NL_FREQ_MAX 8000.0F
-#define SPEAKER_NL_VOL 1.0F
+#define SPEAKER_NL_VOL .25F
 
 #include <Audio.h>
 #include <Wire.h>

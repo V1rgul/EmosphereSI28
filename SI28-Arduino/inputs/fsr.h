@@ -8,7 +8,7 @@
 
 
 #define FSR_PIN A1
-#define FSR_MIN 0
+#define FSR_MIN 1.18
 #define FSR_MAX 2.2F
 
 const bool FSR_DEBUG = 0;
